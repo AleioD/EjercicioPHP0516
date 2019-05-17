@@ -128,29 +128,21 @@
 
 		<!-- productos -->
 		<section class="vip-products">
+			<?php foreach ($productos as $unProducto) :?>
 			<article class="product">
 				<div class="photo-container">
-					<img class="photo" src="images/img-pdto-1.jpg" alt="pdto 01">
-					<img class="special" src="images/img-nuevo.png" alt="plato nuevo">
-					<a class="zoom" href="#">Ampliar foto</a>
+						<img class="photo" src="images/<?php echo $unProducto['imagen'];?>" alt="pdto 01">
+						<img class="special" src="images/img-nuevo.png" alt="plato nuevo">
+						<a class="zoom" href="#">Ampliar foto</a>
 				</div>
-				<h2>Lorem ipsum amet</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
-				<a class="more" href="#">ver más</a>
-			</article>
-			<article class="product">
-				<div class="photo-container">
-					<?php foreach ($productos as $unProducto) :?>
-						<?php foreach ($unProducto as $valor => $unvalor) : ?>
-							<?php if ($valor == "imagen") : ?>
-								<img class="photo" src=<?="images/$unvalor"?> alt="pdto 01">
-								<img class="special" src="images/img-nuevo.png" alt="plato nuevo">
-								<a class="zoom" href="#">Ampliar foto</a>
-				</div>
-							<?php endif; ?>
-						<?php endforeach; ?>
-				<h2>Lorem ipsum amet</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut recusandae eaque debitis sint necessitatibus, officia ex.</p>
+				<h2><?php echo $unProducto['titulo'];?></h2>
+				<p><?php echo $unProducto['descripcion'];?></p>
+				<?php if ($unProducto['enOferta'] == true) : ?>
+					<p><?php echo "En Oferta"?></p>
+				<?php else : ?>
+					<p><?php echo "Precio Regular"?></p>
+				<?php endif; ?>
+				<p><?php echo $unProducto['precio'];?></p>
 				<a class="more" href="#">ver más</a>
 				</article>
 			<?php endforeach; ?>
