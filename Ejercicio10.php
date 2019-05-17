@@ -7,7 +7,7 @@ $ceu = [
 "Italia" => ["Roma", "Milan", "Venecia"],
 "Alemania" => ["Munich", "Berlin", "Frankfurt"]
 ];
-
+/*
 foreach ($ceu as $pais => $ciudades) {
   echo "Las ciudades de $pais son:";
   foreach ($ciudades as $unaCiudad) {
@@ -18,3 +18,25 @@ foreach ($ceu as $pais => $ciudades) {
     echo "</ul>";
   }
 }
+*/
+?>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <?php foreach ($ceu as $pais => $ciudades) : ?>
+      <?="Las ciudades de $pais son:"?>
+      <ul>
+        <?php foreach ($ciudades as $unaCiudad) : ?>
+          <li>
+            <?=$unaCiudad?>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endforeach; ?>
+  </body>
+</html>
